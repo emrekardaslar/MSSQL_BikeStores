@@ -112,3 +112,37 @@ JOIN
     sales.staffs st ON o.staff_id = st.staff_id
 GROUP BY 
     st.first_name, st.last_name;
+
+
+-- Select products that have never been ordered
+SELECT 
+    product_name 
+FROM 
+    production.products 
+WHERE 
+    product_id NOT IN (
+        SELECT 
+            DISTINCT product_id 
+        FROM 
+            sales.order_items
+    );
+
+
+--Select customers who have placed more than one order
+SELECT 
+    first_name, 
+    last_name, 
+    email 
+FROM 
+    sales.customers 
+WHERE 
+    customer_id IN (
+        SELECT 
+            customer_id 
+        FROM 
+            sales.orders 
+        GROUP BY 
+            customer_id 
+        HAVING 
+            COUNT(order_id) > 1
+    );
