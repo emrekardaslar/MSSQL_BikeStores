@@ -239,3 +239,19 @@ WHERE
         WHERE 
             o1.store_id = o2.store_id
     );
+
+-- Select the total number of customers in each state
+SELECT 
+    state, 
+    COUNT(customer_id) AS total_customers 
+FROM 
+    sales.customers 
+GROUP BY 
+    state;
+
+
+-- Select the average discount given on all order items
+SELECT 
+    AVG(discount) AS average_discount 
+FROM 
+    sales.order_items;
