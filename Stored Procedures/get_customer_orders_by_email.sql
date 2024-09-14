@@ -1,11 +1,4 @@
-USE [BikeStores]
-GO
-/****** Object:  StoredProcedure [dbo].[get_customer_orders_by_email]    Script Date: 14/08/2024 21:06:07 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [dbo].[get_customer_orders_by_email]
+CREATE OR ALTER PROCEDURE [dbo].[get_customer_orders_by_email]
     @customer_email NVARCHAR(100)
 AS
 BEGIN

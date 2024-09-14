@@ -1,11 +1,4 @@
-USE [BikeStores]
-GO
-/****** Object:  StoredProcedure [dbo].[get_product_stock]    Script Date: 11/08/2024 12:38:01 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [dbo].[get_product_stock]
+CREATE OR ALTER PROCEDURE [dbo].[get_product_stock]
     @product_id INT,
     @store_id INT = NULL  -- Optional parameter to filter by store
 AS

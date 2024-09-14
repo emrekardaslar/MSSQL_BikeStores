@@ -1,11 +1,4 @@
-USE [BikeStores]
-GO
-/****** Object:  StoredProcedure [dbo].[get_brand_by_id]    Script Date: 11/08/2024 12:42:04 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-ALTER PROCEDURE [dbo].[get_brand_by_id]
+CREATE OR ALTER PROCEDURE [dbo].[get_brand_by_id]
     @BrandId INT
 AS
 BEGIN
